@@ -27,7 +27,7 @@ function CardsProduits() {
         axios({
             method: "post",
             withCredentials: true,
-            url: `${process.env.REACT_APP_PORT}/api/set/produit`,
+            url: `http://localhost:9000'/api/set/produit`,
             data: {
                 id
             }
@@ -46,7 +46,7 @@ function CardsProduits() {
           try {
               axios({
                   method: 'POST',
-                  url: `${process.env.REACT_APP_PORT}/mail/send`,
+                  url: `http://localhost:9000'/mail/send`,
                   withCredentials: true,
                   data: {
                       prix, picture,heure:valueOption, email,name,

@@ -26,7 +26,7 @@ function Cards() {
         axios({
             method:"post",
             withCredentials:true,
-            url:`${process.env.REACT_APP_PORT}/api/set`,
+            url:`http://localhost:9000'/api/set`,
             data: {
                 id: id,
             }

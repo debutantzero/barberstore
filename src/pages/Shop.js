@@ -30,7 +30,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { username: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/username`,
+                url: `http://localhost:9000'/api/update/username`,
             }).then((user) => {
                 setSettings(user.data);
                 setUsername("")
@@ -44,7 +44,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { entreprise: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/entreprise`,
+                url: `http://localhost:9000'/api/update/entreprise`,
             }).then((user) => {
                 setSettings(user.data);
                 setEntreprise("")
@@ -57,7 +57,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { pays: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/pays`,
+                url: `http://localhost:9000'/api/update/pays`,
             }).then((user) => {
                 setSettings(user.data);
                 setPays("")
@@ -70,7 +70,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { ville: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/ville`,
+                url: `http://localhost:9000'/api/update/ville`,
             }).then((user) => {
                 setSettings(user.data);
                 setVille("")
@@ -84,7 +84,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { address: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/address`,
+                url: `http://localhost:9000'/api/update/address`,
             }).then((user) => {
                 setSettings(user.data);
                 setAddress("")
@@ -98,7 +98,7 @@ function Render(){
                 method: "patch",
                 withCredentials: true,
                 data: { ville: data },
-                url: `${process.env.REACT_APP_PORT}/api/update/ville`,
+                url: `http://localhost:9000'/api/update/ville`,
             }).then((user) => {
                 setSettings(user.data);
                 setVille("")
@@ -117,7 +117,7 @@ function Render(){
             method: "patch",
             withCredentials: true,
             data: data,
-            url: `${process.env.REACT_APP_PORT}/api/profil`,
+            url: `http://localhost:9000'/api/profil`,
         }).then((user) => {
             setSettings(user.data);
 
@@ -132,7 +132,7 @@ function Render(){
         axios({
             method:"get",
             withCredentials: true,
-            url:`${process.env.REACT_APP_PORT}/api/logout`,
+            url:`http://localhost:9000'/api/logout`,
         }).then((user) => {
             if(user)
             window.location="/"
@@ -151,7 +151,7 @@ function Render(){
             method: "post",
             withCredentials: true,
             data: data,
-            url: `${process.env.REACT_APP_PORT}/api/post`,
+            url: `http://localhost:9000'/api/post`,
         }).then((user) => {
             setproduit(user);
 
@@ -162,7 +162,7 @@ function Render(){
     const removePost = (id) => {
         axios({
             method: 'get',
-            url: `${process.env.REACT_APP_PORT}/api/delete/` + id,
+            url: `http://localhost:9000'/api/delete/` + id,
             withCredentials: true,
         })
             .then((response) => {
@@ -180,7 +180,7 @@ function Render(){
             data: {
                 prix: newPrix
             },
-            url: `${process.env.REACT_APP_PORT}/api/new/` + sendId,
+            url: `http://localhost:9000'/api/new/` + sendId,
             withCredentials: true,
         }).then((user) => {
             setChangePrix(user)

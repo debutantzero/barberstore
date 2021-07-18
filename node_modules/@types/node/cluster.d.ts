@@ -1,18 +1,18 @@
 // Requires `esModuleInterop: true`
 declare module 'cluster' {
-    import * as child from 'child_process';
-    import EventEmitter = require('events');
-    import * as net from 'net';
+    import * as child from 'node:child_process';
+    import EventEmitter = require('node:events');
+    import * as net from 'node:net';
 
     export interface ClusterSettings {
-        execArgv?: string[]; // default: process.execArgv
-        exec?: string;
-        args?: string[];
-        silent?: boolean;
-        stdio?: any[];
-        uid?: number;
-        gid?: number;
-        inspectPort?: number | (() => number);
+        execArgv?: string[] | undefined; // default: process.execArgv
+        exec?: string | undefined;
+        args?: string[] | undefined;
+        silent?: boolean | undefined;
+        stdio?: any[] | undefined;
+        uid?: number | undefined;
+        gid?: number | undefined;
+        inspectPort?: number | (() => number) | undefined;
     }
 
     export interface Address {
@@ -105,8 +105,8 @@ declare module 'cluster' {
          * `setupPrimary` is used to change the default 'fork' behavior. Once called, the settings will be present in cluster.settings.
          */
         setupPrimary(settings?: ClusterSettings): void;
-        readonly worker?: Worker;
-        readonly workers?: NodeJS.Dict<Worker>;
+        readonly worker?: Worker | undefined;
+        readonly workers?: NodeJS.Dict<Worker> | undefined;
 
         readonly SCHED_NONE: number;
         readonly SCHED_RR: number;
@@ -184,4 +184,5 @@ declare module 'cluster' {
 
 declare module 'node:cluster' {
     export * from 'cluster';
+    export { default as default } from 'cluster';
 }

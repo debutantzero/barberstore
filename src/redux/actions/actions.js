@@ -11,7 +11,7 @@ export const getData = (id) => {
     await axios({
       method: "get",
       withCredentials: true,
-      url:`${process.env.REACT_APP_PORT}/api/` + id,
+      url:`http://localhost:9000'/api/` + id,
     }).then(user => {
       dispatch({ type: GET_DATA, payload: user.data })
     }) .catch(err => {
@@ -24,7 +24,7 @@ export const getPost = (id) => {
     axios({
       method: 'get',
       withCredentials: true,
-      url: `${process.env.REACT_APP_PORT}/api/get/` + id,
+      url: `http://localhost:9000'/api/get/` + id,
     })
       .then(user => {
         dispatch({ type: GET_POST, payload: user.data })
@@ -40,7 +40,7 @@ export const update= (id) => {
     await axios({
       method: "get",
       withCredentials: true,
-      url: `${process.env.REACT_APP_PORT}/api/update/`+id,
+      url: `http://localhost:9000'/api/update/`+id,
     }).then(user => {
       dispatch({type: UPDATE_DATA, payload: user.data})
     })
@@ -56,7 +56,7 @@ export const getDataClient=()=>{
     await axios({
       method: "get",
       withCredentials: true,
-      url: `${process.env.REACT_APP_PORT}/api/alluser`,
+      url: `http://localhost:9000'/api/alluser`,
     }).then(user => {
       dispatch({type: GET_DATA_CLIENT, payload: user.data})
     })
@@ -70,7 +70,7 @@ export const getProduitsForClient=() => {
   return dispatch => {
     axios({ 
       method:"get",
-      url: `${process.env.REACT_APP_PORT}/api/produitclient`,
+      url: `http://localhost:9000'/api/produitclient`,
       withCredentials: true,
     }).then((user) => {
       dispatch({type:GET_PRODUCT_CLIENT , payload:user.data})
@@ -85,7 +85,7 @@ export const getId = ()=>{
     axios({
       method:"get",
       withCredentials: true,
-      url:`${process.env.REACT_APP_PORT}/api/one`,
+      url:`http://localhost:9000'/api/one`,
     })
     .then((user)=>{
       dispatch({type:GET_ID_DATA, payload: user.data})

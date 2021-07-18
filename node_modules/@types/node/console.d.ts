@@ -1,5 +1,10 @@
 declare module 'console' {
-    import { InspectOptions } from 'util';
+    import console = require('node:console');
+    export = console;
+}
+
+declare module 'node:console' {
+    import { InspectOptions } from 'node:util';
 
     global {
         // This needs to be global to avoid TS2403 in case lib.dom.d.ts is present in the same build
@@ -109,10 +114,10 @@ declare module 'console' {
         namespace console {
             interface ConsoleConstructorOptions {
                 stdout: NodeJS.WritableStream;
-                stderr?: NodeJS.WritableStream;
-                ignoreErrors?: boolean;
-                colorMode?: boolean | 'auto';
-                inspectOptions?: InspectOptions;
+                stderr?: NodeJS.WritableStream | undefined;
+                ignoreErrors?: boolean | undefined;
+                colorMode?: boolean | 'auto' | undefined;
+                inspectOptions?: InspectOptions | undefined;
             }
 
             interface ConsoleConstructor {
@@ -126,9 +131,4 @@ declare module 'console' {
     }
 
     export = globalThis.console;
-}
-
-declare module 'node:console' {
-    import console = require('console');
-    export = console;
 }

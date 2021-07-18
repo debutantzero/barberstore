@@ -17,7 +17,7 @@ const Register = ({setAuth}) => {
         axios({
             method: "post",
             withCredentials:true,
-            url: `${process.env.REACT_APP_PORT}/api/register`,
+            url: `http://localhost:9000'/api/register`,
             data: {
                 username,
                 entreprise,
@@ -81,7 +81,7 @@ const Login = ({setAuth}) => {
         e.preventDefault();
         axios({
             method: 'POST',
-            url:`${process.env.REACT_APP_PORT}/api/login`,
+            url:`http://localhost:9000'/api/login`,
             withCredentials:true,
             data: {
                 username, password
